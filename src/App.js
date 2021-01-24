@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import './tailwind.css';
-import UserForm from './components/forms/UserForm'
 import Main from './components/Main'
 import Navbar from './components/Navbar'
 import Bookmarks from './components/Bookmarks'
