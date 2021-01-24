@@ -1,9 +1,12 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import TagSelection from './TagSelection'
+import labels from '../../data/data'
 
 function EmployerForm() {
     const {register, handleSubmit, errors } = useForm()
     // Select tags that are applicable to this posting
+    const { jobs, skills } = labels;
 
     /*
         Questions to ask Employer:
@@ -21,6 +24,9 @@ function EmployerForm() {
        console.log(data)
    }
 
+    const handleClick = event => {
+        console.log("clicked")
+    }
 
     return (
         <div>
@@ -46,10 +52,12 @@ function EmployerForm() {
                             <input name="employmentType" type="text" ref={register} className="outline-black w-full my-3 pl-2" />
 
                             <label>Job Position(s)* <br /></label>
-                            <button id="tg-positions" className="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Full Stack Developer</button>
+                            {jobs.map(item => <TagSelection name={item} />)}
+                            {/* <button id="tg-positions" className="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Full Stack Developer</button> */}
 
                             <label><br /><br />Qualification Tags* <br /></label>
-                            <button id="tg-qualifications" className="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Python</button>
+                            {skills.map(item => <TagSelection name={item} />)}
+                            {/* <button id="tg-qualifications" className="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Python</button> */}
 
                             <input type="submit" value="Next" className="ml-auto mr-0 mt-8 block px-4 py-1 rounded bg-blue-300 font-bold cursor-pointer outline-none hover:bg-blue-400 text-blue-800" />
                         </form>                

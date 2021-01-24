@@ -17,7 +17,7 @@ function App() {
     <Router>
 
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/bookmarks" component={Bookmarks} />

@@ -39,10 +39,6 @@ function ApplicantForm() {
         console.log("clicked")
     }
     
-    const labelButtons = jobs.map(jobLabel => {
-        <TagSelection key={jobLabel} handleClick={handleClick}/>
-    })
-
     const cardClassName = "card container w-120 mx-auto px-4 border-4 border-white rounded-lg bg-white shadow-lg"
     const contentClassName = "content p-5"
     const headerClassName = "text-lg font-bold mb-4"
@@ -62,7 +58,6 @@ function ApplicantForm() {
                                     name="fullName"
                                     type="text"
                                     ref={register}
-                                    placeholder="Enter Full Name"
                                 />
                             <label>
                                 Email:
@@ -71,7 +66,6 @@ function ApplicantForm() {
                                     name="email"
                                     type="text"
                                     ref={register}
-                                    placeholder="Enter Email"
                                 />
                             </label>
                             <label>
@@ -81,26 +75,51 @@ function ApplicantForm() {
                                     name="password"
                                     type="password"
                                     ref={register}
-                                    placeholder="Enter Password"
                                 />
                             </label>
                             <br/>
                             <label>
-                                Job Tags
                                 Select job titles that interest you:
+                                <br />
                                 {jobs.map(item => <TagSelection name={item}/>)}
+                            </label>
+                            <br />
+                            <label>
+                                Select skills that you have:
+                                <br />
+                                {skills.map(item => <TagSelection name={item} />)}
                             </label>
                             <br/>
                             <label>
                                 Education
-                                <input name="education" type="text" ref={register} class={labelClassName} placeholder="Enter Education" />
+                                <input 
+                                    name="education" 
+                                    type="text" 
+                                    ref={register} 
+                                    className={labelClassName} 
+                                />
                             </label>
                             <label>
                                 Major
-                                <input name="major" type="text" ref={register} class={labelClassName} placeholder="Enter Major" />
+                                <input 
+                                    name="major" 
+                                    type="text" 
+                                    ref={register} 
+                                    className={labelClassName} 
+                                />
                             </label>
-                            <input name="GPA" type="number" ref={register} step=".01" max="4.00" class={labelClassName} placeholder="Enter GPA" />
-                            <input type="submit" value="Submit" />
+                            <input 
+                                name="GPA" 
+                                type="number" 
+                                ref={register} 
+                                step=".01" 
+                                max="4.00" 
+                                className={labelClassName} 
+                            />
+                            <input 
+                                type="submit" 
+                                value="Submit" 
+                            />
                         </form>
                     </div>
                 </div>
