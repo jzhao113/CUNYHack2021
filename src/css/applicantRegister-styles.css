@@ -1,0 +1,11 @@
+:root {
+    --primary: #98C0E0;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+.outline-black {
+    outline: 2px solid lightgray !important;
+}

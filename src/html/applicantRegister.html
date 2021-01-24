@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rancho&display=swap" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Registration</title>
+    <link rel="stylesheet" href="applicantRegister-styles.css">
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="applicantRegister-script.js"></script>
+
+</head>
+<body style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
+    <div class="main">
+        <div class="card container w-120 mx-auto px-4 border-4 border-white rounded-lg bg-white shadow-lg">
+            <div class="content p-5">
+                <h1 class="text-lg font-bold mb-4">Sign Up Information</h1>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <label>Full Name</label>
+                    <input name="fullName" type="text" ref={register} class="outline-black w-full my-3 pl-2" placeholder="Enter Full Name">
+
+                    <label>Email</label>
+                    <input name="email" type="text" ref={register} class="outline-black w-full my-3 pl-2" placeholder="Enter Email">
+                    
+                    <label>Password</label>
+                    <input name="password" type="password" ref={register} class="outline-black w-full my-3 pl-2" placeholder="Enter Password">
+
+                    <label>Job Tags* <br></label>
+                    <button id="tg-job" onclick="return outlineToggle(this.id)" class="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Full Stack Developer</button>
+
+                    <label><br>Skill Tags* <br></label>
+                    <button id="tg-skill" onclick="return outlineToggle(this.id)" class="border-2 border-gray-300 rounded-lg bg-gray-300 px-2 py-0.5 mr-2 inline-block my-3 pl-2 shadow-sm hover:bg-gray-300 hover:border-blue-400 focus:outline-none">Python</button>
+                    
+                    <label><br>Education</label>
+
+                    <input name="education" type="text" ref={register} class="outline-black w-full my-3 pl-2" placeholder="Enter College">
+                    
+
+                    <label>Major</label>
+                    <input name="major" type="text" ref={register} class="outline-black w-full my-3 pl-2" placeholder="Enter Major">
+
+                    <label>GPA</label>
+                    <input name="GPA" type="number" ref={register} step=".01" max="4.00" class="outline-black w-full my-3 pl-2" placeholder="Enter GPA">
+
+                    <input type="submit" value="Next" class="ml-auto mr-0 mt-8 block px-4 py-1 rounded bg-blue-300 font-bold cursor-pointer outline-none hover:bg-blue-400 text-blue-800">
+                </form>                
+            </div>
+        </div>
+</body>
+</html>
